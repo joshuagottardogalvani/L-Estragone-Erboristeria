@@ -1,0 +1,426 @@
+$colors: (
+    green:#385423,
+    greenText:#a0da74
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+};
+
+body, html {
+    margin: 0;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+body {
+    background-color: color(greenText);
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color:color(green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 5000;
+
+    li {
+        display: inline-block;
+        margin: 0px 50px;
+
+        a {
+            text-decoration: none;
+            color:#fff;
+            font-size: 30px;
+            font-weight: 500;
+            transition: ease;
+            transition-duration: 500ms;
+        }
+
+        a:hover {
+            color: color(greenText);
+            transition: ease;
+            transition-duration: 500ms;
+            text-decoration: none;
+        }
+    }
+}
+
+.sezioni a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: color(greenText);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    transition-delay: 0.25s;
+}
+
+.sezioni a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    text-decoration: none;
+}
+
+.nav {
+    display: none;
+    background-color: color(green);
+    height: 50px;
+}
+
+.menu-opener {
+    color: color(greenText);
+    padding: 10px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.sfondo-header {
+    background-image: url(../img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    height: 450px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.tit-chi-siamo {
+    align-self: center;
+    color: color(greenText);
+    font-size: 5em;
+    font-weight: 700;
+    font-style: italic;
+    background-color: rgba(56, 84, 35, 0.7);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.tit-1 {
+    text-align: center;
+    font-size: 3.5em;
+    padding: 25px;
+    color: color(green);
+    font-weight: 600;
+}
+
+.img-1, .img-2, .img-3, .corpo-1, .corpo-2, .corpo-3 {
+    width: 49%;
+}
+
+.titolo-sinistra {
+    margin-top: 50px;
+    padding: 25px;
+    padding-right: 51%;
+    text-align: center;
+    font-size: 2.5em;
+    color: color(green);
+    font-weight: 500;
+}
+
+.titolo-destra {
+    margin-top: 50px;
+    padding: 25px;
+    padding-left: 51%;
+    text-align: center;
+    font-size: 2.5em;
+    color: color(green);
+    font-weight: 500;
+}
+
+.corpo-1 {
+    display: inline-block;
+    padding: 25px;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+.img-1 {
+    display: inline-block;
+    text-align: center;
+    img {
+        margin-top: -450px;
+        max-width: 100%;
+    }
+}
+
+.corpo-2 {
+    display: inline-block;
+    padding: 25px;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+.img-2 {
+    display: inline-block;
+    text-align: center;
+    img {
+        margin-top: -250px;
+        max-width: 100%;
+    }
+}
+
+.corpo-3 {
+    display: inline-block;
+    padding: 25px;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    text-align: center;
+}
+
+.img-3 {
+    display: inline-block;
+    text-align: center;
+    img {
+        margin-top: -250px;
+        max-width: 100%;
+    }
+}
+
+.tit-2 {
+    padding: 100px;
+    text-align: center;
+    color: color(green);
+
+    h1 {
+        font-weight: 700;
+    }
+
+    h4 {
+        line-height: 1.7em;
+        font-size: 1.6em;
+    }
+}
+
+footer {
+    background-color: color(green);
+    color: color(greenText);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+    padding: 15px 0px;
+}
+
+.logo-isola-verde {
+    width: 200px;
+    height: auto;
+    padding: 25px;
+}
+
+.ragione-sociale {
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 0px 25px 25px;
+}
+
+.contatti {
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+
+    div {
+        padding: 10px 0px;
+
+        i {
+            padding: 0px 15px 15px 0px;
+        }
+
+        a, a:hover, a:visited {
+            color: color(greenText);
+            text-decoration: none;
+        }
+
+        .icon-social {
+            float: right;
+        }
+    }
+}
+
+.mappa {
+    margin: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    header {
+        li {
+            margin: 0px 35px;
+            a {
+                font-size: 23px;
+            }
+        }
+    }
+
+    .sfondo-header {
+        height: 200px;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .mappa {
+        grid-column: 2;
+        padding-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    header {
+        li {
+            margin: 0px 10px;
+            a {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .sfondo-header {
+        height: 150px;
+    }
+
+    .img-1, .img-2, .img-3, .corpo-1, .corpo-2, .corpo-3 {
+        width: 100%;
+    }
+
+    .img-1, .img-2, .img-3 {
+        img {
+            margin-top: 0px;
+        }
+    }
+
+    .titolo-sinistra, .titolo-destra {
+        padding-right: 0%;
+    }
+    
+    footer {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .mappa {
+        grid-column: 1;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+
+    body {
+        margin: 0;
+    }
+    
+    header {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .tit-chi-siamo {
+        font-size: 2em;
+        border-radius: 50%;
+    }
+
+    .tit-1 {
+        font-size: 2em;
+    }
+
+    .img-1, .img-2, .img-3 {
+        text-align: center;
+        width: 100%;
+
+        img {
+            width: 70%;
+        }
+    }
+
+    .sfondo-header {
+        margin-top: 0px;
+    }
+
+    .titolo-destra, .titolo-sinistra {
+        font-size: 2em;
+        padding: 10px;
+    }
+
+    .tit-2 {
+        padding: 20px;
+        h1 {
+            font-size: 1.9em;
+        }
+    
+        h4 {
+            font-size: 1.3em;
+        }
+    }
+
+    iframe {
+        width: 250px;
+    }
+}
